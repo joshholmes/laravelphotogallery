@@ -1,3 +1,15 @@
+## Microsoft Azure Customized Laravel PHP Framework
+
+![Deploy to Azure](https://img.shields.io/badge/platform-Azure-00abec.svg)
+![PHP 5.5, 5.6](https://img.shields.io/badge/PHP-5.5%2C%205.6-4F5B93.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Redis Configured](https://img.shields.io/badge/redis-configured-brightgreen.svg)
+![MySQL Configured](https://img.shields.io/badge/mysql-configured-brightgreen.svg)
+
+### Deploy to Azure
+
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
