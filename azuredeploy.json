@@ -18,7 +18,7 @@
                 "Shared",
                 "Basic",
                 "Standard",
-								"Premium"
+		"Premium"
             ],
             "defaultValue": "Free"
         },
@@ -51,7 +51,7 @@
 				        "Jupiter",
 				        "Saturn",
 				        "Venus",
-				        "Titan"
+				        "titan"
       			],
       			"defaultValue": "Free"
     		},
