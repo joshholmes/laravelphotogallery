@@ -74,6 +74,12 @@
             "type": "string",
             "allowedValues": [ "2.8" ],
             "defaultValue": "2.8"
+        },
+        "appkey": {
+            "type": "string",
+            "metadata": {
+              "description": "Secure your application with an App Key."
+            }
         }
     },
     "resources": [
@@ -130,7 +136,7 @@
             },
             "resources": [
                 {
-                    "apiVersion": "2014-04-01",
+                    "apiVersion": "2015-06-01",
                     "type": "config",
                     "name": "web",
                     "dependsOn": [
@@ -144,56 +150,26 @@
                 								"physicalPath": "site\\wwwroot\\public"
               							}
 												],
-												"webSocketsEnabled": true,
-            						"alwaysOn": true,
-                        "appSettings": [
-                            {
-                                "name": "REDIS_HOST",
-                                "value": "[concat(parameters('siteName'), '.redis.cache.windows.net')]"
-                            },
-														{
-																"name": "REDIS_PORT",
-																"value": "6379"
-														},
-                            {
-                                "name": "REDIS_KEY",
-                                "value": "[listKeys(resourceId('Microsoft.Cache/Redis', parameters('siteName')), '2014-04-01').primaryKey]"
-                            },
-														{
-																"name": "DB_HOST",
-																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).hostname]"
-														},
-														{
-																"name": "DB_DATABASE",
-																"value": "[parameters('sqlServerName')]"
-														},
-														{
-																"name": "DB_USERNAME",
-																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).username]"
-														},
-														{
-																"name": "DB_PASSWORD",
-																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).password]"
-														},
-                            {
-                                "name": "APP_KEY",
-                                "value": ""
-                            }
-                        ]
+												"webSocketsEnabled": false,
+            						"alwaysOn": false
                     }
                 },
                 {
-                    "apiVersion": "2014-04-01",
-                    "name": "web",
-                    "type": "sourcecontrols",
+                    "apiVersion": "2015-06-01",
+                    "name": "appsettings",
+                    "type": "config",
                     "dependsOn": [
-                        "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]",
-                        "[concat('Microsoft.Web/sites/', parameters('siteName'), '/config/web')]"
+                        "[concat('Microsoft.Web/sites/', parameters('siteName'))]"
                     ],
                     "properties": {
-                        "RepoUrl": "[parameters('repoUrl')]",
-                        "branch": "[parameters('branch')]",
-                        "IsManualIntegration": true
+                        "REDIS_HOST": "[concat(parameters('siteName'), '.redis.cache.windows.net')]",
+                        "REDIS_PORT": "6379",
+												"REDIS_KEY": "[listKeys(resourceId('Microsoft.Cache/Redis', parameters('siteName')), '2014-04-01').primaryKey]",
+                        "DB_HOST": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).hostname]",
+                        "DB_DATABASE": "[parameters('sqlServerName')]",
+												"DB_USERNAME": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).username]",
+												"DB_PASSWORD": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).password]",
+												"APP_KEY": "[parameters('appkey')]"
                     }
                 },
 								{
@@ -205,7 +181,22 @@
 				          ],
 				          "properties": {
 				          }
-       					}
+       					},
+                {
+                    "apiVersion": "2014-04-01",
+                    "name": "web",
+                    "type": "sourcecontrols",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]",
+                        "[concat('Microsoft.Web/sites/', parameters('siteName'), '/config/web')]",
+                        "[resourceId('Microsoft.Web/Sites/siteextensions', parameters('siteName'), 'ComposerExtension')]"
+                    ],
+                    "properties": {
+                        "RepoUrl": "[parameters('repoUrl')]",
+                        "branch": "[parameters('branch')]",
+                        "IsManualIntegration": true
+                    }
+                }
             ]
         }
     ]
