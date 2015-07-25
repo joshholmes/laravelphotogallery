@@ -18,7 +18,7 @@
                 "Shared",
                 "Basic",
                 "Standard",
-		"Premium"
+		            "Premium"
             ],
             "defaultValue": "Free"
         },
@@ -149,7 +149,7 @@
                         "appSettings": [
                             {
                                 "name": "REDIS_HOST",
-                                "value": "[reference(concat('Microsoft.Cache/Redis', parameters('siteName'))).hostname]"
+                                "value": "[concat(parameters('siteName'), '.redis.cache.windows.net')]"
                             },
 														{
 																"name": "REDIS_PORT",
@@ -174,7 +174,11 @@
 														{
 																"name": "DB_PASSWORD",
 																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).password]"
-														}
+														},
+                            {
+                                "name": "APP_KEY",
+                                "value": ""
+                            }
                         ]
                     }
                 },
