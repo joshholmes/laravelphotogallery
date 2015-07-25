@@ -161,20 +161,20 @@
                             },
 														{
 																"name": "DB_HOST",
-																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).hostname]",
+																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).hostname]"
 														},
 														{
 																"name": "DB_DATABASE",
-																"value": "[parameters('sqlServerName')]",
+																"value": "[parameters('sqlServerName')]"
 														},
 														{
 																"name": "DB_USERNAME",
-																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).username]",
+																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).username]"
 														},
 														{
 																"name": "DB_PASSWORD",
-																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).password]",
-														},
+																"value": "[reference(concat('SuccessBricks.ClearDB/databases/', parameters('sqlServerName'))).password]"
+														}
                         ]
                     }
                 },
