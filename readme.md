@@ -8,7 +8,40 @@
 
 ### Deploy to Azure
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSyntaxC4-MSFT%2Flaravel%2Fmaster%2Fazuredeploy.json)
+
+1. Click on Deploy to Azure
+2. Signin to a Microsoft Account which is associated to an Azure Subscription ([Free Trial](http://aka.ms/TryAzureToday))
+3. Fill out the values for your site
+   * Site Name
+   * App Service Plan Name
+   * Site Location
+     * `Central US`
+     * `North Central US`
+     * `South Central US`
+     * `West US`
+     * `North Europe`
+     * `West Europe`
+     * `East Asia`
+     * `South East Asia`
+     * `Japan East`
+     * `Japan West`
+     * `Brazil South`
+   * repoUrl `https://github.com/SyntaxC4-MSFT/laravel.git`
+   * Database Name
+   * Database Location
+     * `Central US`
+     * `North Central US`
+     * `South Central US`
+     * `West US`
+     * `North Europe`
+     * `West Europe`
+     * `East Asia`
+     * `South East Asia`
+     * `Japan East`
+     * `Japan West`
+     * `Brazil South`
+   * APP_KEY (32 character string)
 
 ## Laravel PHP Framework
 
