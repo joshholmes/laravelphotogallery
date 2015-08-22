@@ -8,7 +8,7 @@
 
 ### Deploy to Azure
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSyntaxC4-MSFT%2Flaravel%2Fmaster%2Fazuredeploy.json)
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](http://azuredeploy.net/)
 
 1. Click on Deploy to Azure
 2. Signin to a Microsoft Account which is associated to an Azure Subscription ([Free Trial](http://aka.ms/TryAzureToday))
