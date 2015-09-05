@@ -21,7 +21,7 @@ class HomeController extends Controller
 						$photos = array();
 						foreach($blobs as $blob)
 						{
-								$photos = array($blob->getUrl() => $blob->getName());
+								$photos[] = array($blob->getUrl() => $blob->getName());
 						}
 							
 						return view('home.index', [ 'photos' => $photos ]);

@@ -7,7 +7,9 @@
           <?php
           foreach($photos as $key => $value)
           {
-              echo "<li><img src='".$key."' /></li>";
+            foreach($value as $k => $v) {
+              echo "<li><img src='".$k."' /></li>";
+            }
           }
           ?>
       </ul>
