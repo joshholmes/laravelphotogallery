@@ -7,7 +7,11 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "predis/predis": "~1.0"
+        "predis/predis": "~1.0",
+        "pear-pear.php.net/HTTP_Request2": "*",
+        "pear-pear.php.net/Mail_Mime": "*",
+        "pear-pear.php.net/Mail_mimeDecode": "*",
+        "microsoft/windowsazure": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -28,6 +32,12 @@
             "tests/TestCase.php"
         ]
     },
+    "repositories": [
+      {
+          "type": "pear",
+          "url": "http://pear.php.net"
+      }
+    ],
     "scripts": {
         "post-install-cmd": [
             "php artisan clear-compiled",
