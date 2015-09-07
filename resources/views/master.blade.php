@@ -1,0 +1,2 @@
+  @secion('galleryContent')
+  @show
